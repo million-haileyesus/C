@@ -19,6 +19,11 @@ void run() {
 	 * 	}
 	 * 	for(int i = 0; i < board.length && !can_quit; i++) {
 	 *		if(is_safe()) {
+	 *			if(i == board.length - 1) {
+	 *			}
+	 *			else {
+	 *				board[++i] = 0;
+	 *			}
 	 *		}
 	 *		else {
 	 *			while(
