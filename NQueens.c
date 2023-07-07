@@ -21,15 +21,16 @@ void run() {
 	 *		if(is_safe()) {
 	 *			if(i == size - 1) {
 	 *				can_quit = true;
+	 *				display();
 	 *			}
 	 *			else {
 	 *				board[++i] = 0;
 	 *			}
 	 *		}
 	 *		else {
-	 *			while(i > 0 && board) {
+	 *			while(i > 0 && board[i] == size - 1) {
 	 *			}
-	 *			can_quit = (board[i] == size);
+	 *			can_quit = (++board[i] == size);
 	 *
 	 */
 bool is_safe() {
