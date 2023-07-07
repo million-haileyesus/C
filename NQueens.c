@@ -36,3 +36,12 @@ bool is_safe() {
 	}
 	return isSafe;
 }
+
+void display() {
+	for(int i = 0; i < 10; i++) {
+		for(int j = 0; j < 12; j++) {
+			printf("%s\n");
+		}
+		printf("%s\n");
+	}
+}
