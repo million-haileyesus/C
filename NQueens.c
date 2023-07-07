@@ -20,13 +20,17 @@ void run() {
 	 * 	for(int i = 0; i < size && !can_quit; i++) {
 	 *		if(is_safe()) {
 	 *			if(i == size - 1) {
+	 *				can_quit = true;
 	 *			}
 	 *			else {
 	 *				board[++i] = 0;
 	 *			}
 	 *		}
 	 *		else {
-	 *			while(
+	 *			while(i > 0 && board) {
+	 *			}
+	 *			can_quit = (board[i] == size);
+	 *
 	 */
 bool is_safe() {
 	int k = 1;
