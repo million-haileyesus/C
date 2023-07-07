@@ -29,10 +29,12 @@ void run() {
 	 *		}
 	 *		else {
 	 *			while(i > 0 && board[i] == size - 1) {
+	 *				board[i--] = -1;
 	 *			}
 	 *			can_quit = (++board[i] == size);
 	 *
 	 */
+}
 bool is_safe() {
 	int k = 1;
 	bool isSafe = true;
