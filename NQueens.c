@@ -11,15 +11,15 @@ void run() {
 	/**
 	 * int[num]* board;
 	 * bool can_quit = false;
-	 * for(int i = 1; i < board.length; i++) {
+	 * board[0] = 0;
+	 * int size = sizeof(board) / sizeof(board[0]);
+	 * for(int i = 1; i < size; i++) {
 	 * 		board[i] = -1;
 	 * 	}
-	 * 	if(board.length > 0) {
-	 * 		board[0] = 0;
-	 * 	}
-	 * 	for(int i = 0; i < board.length && !can_quit; i++) {
+	 * 	 	
+	 * 	for(int i = 0; i < size && !can_quit; i++) {
 	 *		if(is_safe()) {
-	 *			if(i == board.length - 1) {
+	 *			if(i == size - 1) {
 	 *			}
 	 *			else {
 	 *				board[++i] = 0;
