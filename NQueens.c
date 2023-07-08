@@ -47,7 +47,12 @@ bool is_safe() {
 void display() {
 	for(int i = 0; i < 10; i++) {
 		for(int j = 0; j < 12; j++) {
-			printf("%s\n");
+			//if(j == board[i]) {
+				printf("%sQ");
+			}
+			//else {
+			//	printf("%s-");
+			//}
 		}
 		printf("%s\n");
 	}
