@@ -3,9 +3,15 @@
 
 void main() {
     printf("%s", "choose a number:\n");
-    int input = getchar();
-	int size = input - '0';
-    printf("%d\n", size);
+	int input = getchar();
+    int size, board_size;
+	size = board_size = 0;
+    while(input != '\n') {
+		size = input - '0';
+        board_size = 10 * board_size + size;
+        input = getchar();
+    }
+	printf("%d\n", board_size);	
 }
 
 void run() {
