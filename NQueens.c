@@ -3,8 +3,9 @@
 
 void main() {
     printf("%s", "choose a number:\n");
-    int c = getchar();
-    printf("%d", c);
+    int input = getchar();
+	int size = input - '0';
+    printf("%d", size);
 }
 
 void run() {
