@@ -5,7 +5,7 @@ void main() {
     printf("%s", "choose a number:\n");
     int input = getchar();
 	int size = input - '0';
-    printf("%d", size);
+    printf("%d\n", size);
 }
 
 void run() {
