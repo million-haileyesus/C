@@ -4,7 +4,7 @@
 #define high 320
 #define incr 20
 void main() {
-	for(int i = low; i <= high; i += incr) {
-		printf("%4d %6.1f\n", i, (5.0/9) * (i - 32));
-	}
+    for(int i = low; i <= high; i += incr) {
+        printf("%4d %6.1f\n", i, (5.0/9) * (i - 32));
+    }
 }
