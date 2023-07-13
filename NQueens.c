@@ -12,12 +12,12 @@ void main() {
         input = getchar();
     }
     printf("%d\n", board_size);
-	back_track();
+    back_track();
 }
 
 void back_track(int board_size) {
     bool can_quit = false;
-	int board[board_size];
+    int board[board_size];
     board[0] = 0;
     for(int i = 1; i < board_size; i++) {
         board[i] = -1;
