@@ -1,20 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-void main() {
-    printf("%s", "choose a number:\n");
-    int input = getchar();
-    int size, board_size;
-    size = board_size = 0;
-    while(input != '\n') {
-        size = input - '0';
-        board_size = 10 * board_size + size;
-        input = getchar();
-    }
-    printf("%d\n", board_size);
-    back_track(board_size);
-}
-
 void back_track(int board_size) {
     bool can_quit = false;
     int board[board_size];
@@ -71,4 +57,18 @@ void display() {
         //}
         printf("%s\n");
     }
+}
+
+void main() {
+    printf("%s", "choose a number:\n");
+    int input = getchar();
+    int size, board_size;
+    size = board_size = 0;
+    while(input != '\n') {
+        size = input - '0';
+        board_size = 10 * board_size + size;
+        input = getchar();
+    }
+    printf("%d\n", board_size);
+    back_track(board_size);
 }
