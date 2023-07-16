@@ -46,15 +46,15 @@ bool is_safe(int[] board, int i, int j, int board_size) {
     int k = 1;
     bool isSafe = true;
     for(; i > 0 && isSafe; k++) {
-		if(board[i - 1] == j) {
-			isSafe = false;
-		}
-		else if(board[i - 1] == (k + j)) {
-			isSafe = false;
-		}
-		else if(board[i - 1] == (k - j)) {
-			isSafe = false;
-		}
+        if(board[i - 1] == j) {
+            isSafe = false;
+        }
+        else if(board[i - 1] == (k + j)) {
+            isSafe = false;
+        }
+        else if(board[i - 1] == (k - j)) {
+            isSafe = false;
+        }
     }
     return isSafe;
 }
