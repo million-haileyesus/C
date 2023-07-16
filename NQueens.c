@@ -12,7 +12,7 @@ void main() {
         input = getchar();
     }
     printf("%d\n", board_size);
-    back_track();
+    back_track(board_size);
 }
 
 void back_track(int board_size) {
@@ -24,10 +24,10 @@ void back_track(int board_size) {
     }
 
     for(int i = 0; i < board_size && !can_quit; i++) {
-        if(is_safe()) {
+        if(is_safe(board, i, board[i], board_size)) {
             if(i == board_size - 1) {
                 can_quit = true;
-                display();
+                //display();
             }
             else {
                 board[++i] = 0;
@@ -42,11 +42,19 @@ void back_track(int board_size) {
     }
 
 }
-bool is_safe() {
+bool is_safe(int[] board, int i, int j, int board_size) {
     int k = 1;
     bool isSafe = true;
-    for(int i = 0; i < 10; i++) {
-
+    for(; i > 0 && isSafe; k++) {
+		if(board[i - 1] == j) {
+			isSafe = false;
+		}
+		else if(board[i - 1] == (k + j)) {
+			isSafe = false;
+		}
+		else if(board[i - 1] == (k - j)) {
+			isSafe = false;
+		}
     }
     return isSafe;
 }
