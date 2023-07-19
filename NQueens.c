@@ -28,7 +28,7 @@ void back_track(int board_size) {
     }
 
 }
-bool is_safe(int *board, int i, int j, int board_size) {
+bool is_safe(int[] board, int i, int j, int board_size) {
     int k = 1;
     bool isSafe = true;
     for(; i > 0 && isSafe; k++) {
