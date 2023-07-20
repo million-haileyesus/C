@@ -6,15 +6,15 @@ bool is_viable(int board[], int i, int j, int board_size);
 void display(int board[], int board_size);
 
 void main() {
-    printf("%s", "choose a number:\n");
+    printf("%s", "choose a number: \n");
     int input = getchar();
-    int size, board_size;
-    size = board_size = 0;
-    while(input != '\n') {
+    int board_size;
+    /*while(input != '\n') {
         size = input - '0';
         board_size = 10 * board_size + size;
         input = getchar();
-    }
+    }*/
+	scanf("%d", &board_size);
     back_track(board_size);
 }
 
@@ -47,11 +47,7 @@ void back_track(int board_size) {
             while(i > 0 && board[i] == board_size - 1) {
                 board[i--] = -1;
             }
-            board[i] = board[i] + 1;
-            if(board[i] == board_size) {
-                can_quit = true;
-            }
-            //can_quit = (++board[i] == board_size);
+            can_quit = (++board[i] == board_size);
         }
     }
 }
