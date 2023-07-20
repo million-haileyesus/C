@@ -2,7 +2,7 @@
 #include <stdbool.h>
 
 void back_track(int board_size);
-bool is_safe(int board[], int i, int j, int board_size);
+bool is_viable(int board[], int i, int j, int board_size);
 void display(int board[], int board_size);
 
 void main() {
@@ -27,8 +27,8 @@ void back_track(int board_size) {
         board[i] = -1;
     }
 
-    for(int i = 0; i < board_size && !can_quit; i++) {
-        if(is_safe(board, i, board[i], board_size)) {
+    for(int i = 0; i < board_size && !can_quit; ) {
+        if(is_viable(board, i, board[i], board_size)) {
             if(i == board_size - 1) {
                 can_quit = true;
                 display(board, board_size);
@@ -50,7 +50,7 @@ void back_track(int board_size) {
     }
 }
 
-bool is_safe(int board[], int i, int j, int board_size) {
+bool is_viable(int board[], int i, int j, int board_size) {
     bool isSafe = true;
     int k = 1;
     for(; i > 0 && isSafe; k++, i--) {
