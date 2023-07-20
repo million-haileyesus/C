@@ -15,10 +15,16 @@ void main() {
         board_size = 10 * board_size + size;
         input = getchar();
     }
-    // printf("%d\n", board_size);
     back_track(board_size);
 }
 
+/**
+ * It advances to the next column if the queens position is viable, but
+ * backtracks to the next available row or the previous column. If number
+ * of input is filled on the board, it gets displayed.
+ * 
+ * @param board_size The size count of the row and column on the board.
+ */
 void back_track(int board_size) {
     bool can_quit = false;
     int board[board_size];
@@ -50,23 +56,40 @@ void back_track(int board_size) {
     }
 }
 
+/**
+ * It checks if the queen does not attack or get attacked by others, or if it
+ * is safe to be place in the position provided.
+ *
+ * @param board 		The board where the queens will be placed.
+ * @param i     		The position of the column.
+ * @param j				The position of the row.
+ * @param board_size	The size count of the row and column on the board.
+ *
+ * @return is_safe		Return true if it is safe and false if not.
+ */
 bool is_viable(int board[], int i, int j, int board_size) {
-    bool isSafe = true;
+    bool is_safe = true;
     int k = 1;
-    for(; i > 0 && isSafe; k++, i--) {
+    for(; i > 0 && is_safe; k++, i--) {
         if(board[i - 1] == j) {
-            isSafe = false;
+            is_safe = false;
         }
         else if(board[i - 1] == (j + k)) {
-            isSafe = false;
+            is_safe = false;
         }
         else if(board[i - 1] == (j - k)) {
-            isSafe = false;
+            is_safe = false;
         }
     }
-    return isSafe;
+    return is_safe;
 }
 
+/**
+ * Displays the board with their viable positions.
+ *
+ * @param board 		The board where the queens will be placed.
+ * @param board_size	The size count of the row and column on the board.
+ */
 void display(int board[], int board_size) {
     for(int i = 0; i < board_size; i++) {
         for(int j = 0; j < board_size; j++) {
