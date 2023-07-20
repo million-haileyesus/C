@@ -41,15 +41,19 @@ void back_track(int board_size) {
             while(i > 0 && board[i] == board_size - 1) {
                 board[i--] = -1;
             }
-            can_quit = (++board[i] == board_size);
+            board[i] = board[i] + 1;
+            if(board[i] == board_size) {
+                can_quit = true;
+            }
+            //can_quit = (++board[i] == board_size);
         }
     }
 }
 
 bool is_safe(int board[], int i, int j, int board_size) {
     bool isSafe = true;
-	int k = 1;
-	for(; i > 0 && isSafe; k++, i--) {
+    int k = 1;
+    for(; i > 0 && isSafe; k++, i--) {
         if(board[i - 1] == j) {
             isSafe = false;
         }
