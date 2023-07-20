@@ -47,16 +47,16 @@ void back_track(int board_size) {
 }
 
 bool is_safe(int board[], int i, int j, int board_size) {
-    int k = 1;
     bool isSafe = true;
-    for(; i > 0 && isSafe; k++, i++) {
+	int k = 1;
+	for(; i > 0 && isSafe; k++, i--) {
         if(board[i - 1] == j) {
             isSafe = false;
         }
-        else if(board[i - 1] == (k + j)) {
+        else if(board[i - 1] == (j + k)) {
             isSafe = false;
         }
-        else if(board[i - 1] == (k - j)) {
+        else if(board[i - 1] == (j - k)) {
             isSafe = false;
         }
     }
