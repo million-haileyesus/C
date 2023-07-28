@@ -90,7 +90,7 @@ void display(int board[], int board_size) {
     for(int i = 0; i < board_size; i++) {
         for(int j = 0; j < board_size; j++) {
             if(j == board[i]) {
-                printf("%s", "Q");
+                printf("%s", "O");
             }
             else {
                 printf("%s", "-");
