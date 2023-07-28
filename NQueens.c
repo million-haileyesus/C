@@ -35,9 +35,9 @@ void back_track(int board_size) {
 
     for(int i = 0; i < board_size && !can_quit; ) {
         if(is_viable(board, i, board[i], board_size)) {
-            if(i == board_size - 1) {
-                can_quit = true;
+            if(i == board_size - 1) {		    
                 display(board, board_size);
+                can_quit = true;
             }
             else {
                 board[++i] = 0;
