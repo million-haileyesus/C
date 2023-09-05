@@ -73,7 +73,7 @@ bool is_viable(int board[], int i, int j, int board_size) {
         if(board[i - 1] == (j + k)) {
             is_safe = false;
         }
-        else if(board[i - 1] == (j - k)) {
+        if(board[i - 1] == (j - k)) {
             is_safe = false;
         }
     }
