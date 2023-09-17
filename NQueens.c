@@ -2,6 +2,7 @@
 #include <stdbool.h>
 
 void back_track(int board_size);
+
 bool is_viable(int board[], int i, int j, int board_size);
 void display(int board[], int board_size);
 
